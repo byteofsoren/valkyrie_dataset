@@ -61,6 +61,8 @@ if __name__ == "__main__":
     imgid = [images  for images in glob.glob(f"{seldir}/*.png")]
     # print(imgid)
     resultdir = seldir.replace("data/","results/")
+    if not os.path.exists("results"):
+        os.makedirs("results")
     if not os.path.exists(resultdir):
         os.makedirs(resultdir)
     else:
