@@ -1,0 +1,25 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+__init__	extrinsic_pos/extpos.py	/^        def __init__(self,img,sift):$/;"	m	class:pos_img._img_template
+__init__	extrinsic_pos/extpos.py	/^    def __init__(self, inputimg, board):$/;"	m	class:pos_img
+_img_template	extrinsic_pos/extpos.py	/^    class _img_template():$/;"	c	class:pos_img
+_resize	extrinsic_pos/extpos.py	/^        _resize=None$/;"	v	class:pos_img._img_template
+_sift	extrinsic_pos/extpos.py	/^        _sift=None$/;"	v	class:pos_img._img_template
+coner	extrinsic_pos/extpos.py	/^        def coner(self,  select:str="harris", threshold:float=0.04, use_resized:bool=False):$/;"	m	class:pos_img._img_template
+conerimg	extrinsic_pos/extpos.py	/^        conerimg=None$/;"	v	class:pos_img._img_template
+coners	extrinsic_pos/extpos.py	/^    def coners(self,select:str='harris', threshold:float=0.01):$/;"	m	class:pos_img
+flan	extrinsic_pos/extpos.py	/^    def flan(self, flan_index_kdtree:int=0,trees:int=5,checks:int=50):$/;"	m	class:pos_img
+gray	extrinsic_pos/extpos.py	/^        def gray(self):$/;"	m	class:pos_img._img_template
+main	main.py	/^def main():$/;"	f
+points	extrinsic_pos/extpos.py	/^        def points(self, good:list):$/;"	m	class:pos_img._img_template
+pos_img	extrinsic_pos/extpos.py	/^class pos_img():$/;"	c
+resize	extrinsic_pos/extpos.py	/^        def resize(self, width ,height):$/;"	m	class:pos_img._img_template
+set	extrinsic_pos/extpos.py	/^        def set(self, img):$/;"	m	class:pos_img._img_template
+shape	extrinsic_pos/extpos.py	/^        def shape(self):$/;"	m	class:pos_img._img_template
+shapes	extrinsic_pos/extpos.py	/^    def shapes(self):$/;"	m	class:pos_img
+show	extrinsic_pos/extpos.py	/^    def show(self):$/;"	m	class:pos_img
+zeropad	extrinsic_pos/extpos.py	/^        def zeropad(self,width,height):$/;"	m	class:pos_img._img_template
