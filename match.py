@@ -45,6 +45,27 @@ def matcher(img,board):
     cv2.drawMatches(img1, keypoints1, img2, keypoints2, good_matches, img_matches, flags=cv2.DrawMatchesFlags_NOT_DRAW_SINGLE_POINTS)
     return img_matches
 
+def matcher_orb(img,board):
+    img1 = board
+    img2 = img
+
+    if img1 is None or img2 is None:
+        print('Could not open or find the images!')
+        exit(0)
+    #-- Step 1: Detect the keypoints using SURF Detector, compute the descriptors
+    orb = cv2.ORB_create()
+    keypoints1, descriptors1 = orb.detectAndCompute(img1, None)
+    keypoints2, descriptors2 = orb.detectAndCompute(img2, None)
+
+    # Brute force matching
+    bf = cv2.BFMatcher(cv2.NORM_HAMMING)
+    # bf = cv2.BFMatcher(cv2.NORM_HAMMING2)
+    matches = bf.match(descriptors1,descriptors2)
+    matches = sorted(matches,key=lambda x:x.distance)
+
+    matching_result = cv2.drawMatches(img1, keypoints1, img2, keypoints2,matches[:50], None, flags=2)
+    return matching_result
+
 if __name__ == "__main__":
     bod = cv2.imread("./checker_board.png", cv2.IMREAD_GRAYSCALE)
     # img = cv2.imread("./data/human4_onside/img_014.png", cv2.IMREAD_GRAYSCALE)
@@ -72,6 +93,7 @@ if __name__ == "__main__":
         imgname = img.replace(f"{seldir}/","")
         imgdata = cv2.imread(img, cv2.IMREAD_GRAYSCALE)
         img_matches = matcher(imgdata,bod)
+        # img_matches = matcher_orb(imgdata,bod)
         # write_path
         cv2.imwrite(f"{resultdir}/{imgname}", img_matches)
         # -- Show detected matches

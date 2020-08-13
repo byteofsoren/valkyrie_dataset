@@ -139,3 +139,4 @@ cython_debug/
 
 # results directory ignored
 /results
+*.gz
